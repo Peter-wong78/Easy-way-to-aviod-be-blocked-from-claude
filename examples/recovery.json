@@ -1,0 +1,21 @@
+{
+  "tasks_exited": true,
+  "baseline": {
+    "main": "anchor \"system/*\" all",
+    "session_anchor": "",
+    "nat": "nat-anchor \"system/*\" all",
+    "system_anchors": "anchor \"system/example\" all"
+  },
+  "armed": {
+    "main": "anchor \"session-example\" quick all\nanchor \"system/*\" all",
+    "session_anchor": "pass quick on utun4 all no state\nblock drop quick all",
+    "nat": "nat-anchor \"system/*\" all",
+    "system_anchors": "anchor \"system/example\" all"
+  },
+  "current": {
+    "main": "anchor \"session-example\" quick all\nanchor \"system/*\" all",
+    "session_anchor": "pass quick on utun4 all no state\nblock drop quick all",
+    "nat": "nat-anchor \"system/*\" all",
+    "system_anchors": "anchor \"system/example\" all"
+  }
+}
