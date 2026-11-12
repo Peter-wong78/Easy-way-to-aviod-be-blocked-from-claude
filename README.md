@@ -1,5 +1,16 @@
 # macOS VPN Session Guard
 
+## 0.1.0 · LetsVPN 安装候选版
+
+[查看预发布和下载附件](https://github.com/Peter-wong78/Easy-way-to-aviod-be-blocked-from-claude/releases/tag/v0.1.0-letsvpn) · 含 macOS 安装包、完整源码、使用说明及 SHA-256 校验值。
+
+- **适用环境**：Apple 芯片、macOS 27.2（26B118）、LetsVPN、活动的 `en0` 单 IPv4、默认且停用的 PF，以及 Apple Command Line Tools 和管理员账号。
+- **验证进度**：安装包未签名、未公证。已解包核对，源码 ZIP 解压后 59 项离线测试通过。独立 Mac 的实装、断线和恢复仍待验收。
+- **使用方式**：在独立测试机预检并完成两轮本机试验。会话限制整机出站，其他应用也可能断网。保存并退出相关任务后，用随包的离线恢复入口撤回规则。
+- **适配其他 VPN**：目前未验证。可编辑预发布源码 ZIP 内的 `vpn_profile.py`，重新打包并验证目标机器。
+
+## 离线源码预览
+
 > Source preview · Offline examples for a temporary macOS VPN session guard. Run the examples with Python 3.9+ and no administrator privileges.
 
 临时会话保护用于降低 VPN 断线后流量回落到物理网卡的风险。现有原型用 macOS 的 PF 防火墙限制整机出站流量，并在工作应用退出后恢复原规则。此仓库提供经过脱敏的规则生成器、恢复判断示例和原型操作说明。运行示例只会输出预览结果。
@@ -36,7 +47,7 @@ python3 -m unittest discover -s tests -v
 | 对象 | 已有证据 |
 | --- | --- |
 | 本机旧版原型 | 目前只在一台 Mac 上使用 LetsVPN 实测过手动开始、断线和手动恢复。 |
-| 本仓库 | 规则生成和恢复判断使用合成输入验证，无需联网或管理员权限。 |
+| 离线源码预览 | 规则生成和恢复判断使用合成输入验证，无需联网或管理员权限。 |
 | 自动收尾 | OpenBot 窗口识别和自动收尾仍属实验，日常流程使用手动退出。 |
 | 待验证环境 | 其他 Mac、VPN 客户端或版本、睡眠唤醒、换网和升级后的行为需要单独验收。 |
 
